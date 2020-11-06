@@ -1,0 +1,7 @@
+{
+  "name": "payhost-client",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
