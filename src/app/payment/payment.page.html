@@ -1,9 +1,78 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>payment</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>Card Payment</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <!-- Account -->
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="data.password" placeholder="Password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">PayGate Id</ion-label>
+    <ion-input [(ngModel)]="data.payGateId" placeholder="PayGate Id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email Address</ion-label>
+    <ion-input [(ngModel)]="data.email" placeholder="Email Address"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input [(ngModel)]="data.firstName" placeholder="First Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Id Number</ion-label>
+    <ion-input [(ngModel)]="data.idNumber" placeholder="Id Number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Surname</ion-label>
+    <ion-input [(ngModel)]="data.lastName" placeholder="Surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Middle Name</ion-label>
+    <ion-input [(ngModel)]="data.middleName" placeholder="Middle Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mobile Number</ion-label>
+    <ion-input [(ngModel)]="data.mobile" placeholder="Mobile Number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input [(ngModel)]="data.title" aria-placeholder="Title"></ion-input>
+  </ion-item>
+  <!-- Card Details-->
+  <ion-item>
+    <ion-label position="floating">Card Number</ion-label>
+    <ion-input [(ngModel)]="data.cardNumber" aria-placeholder="Card Number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label postion="floating">Card Expiry Date</ion-label>
+    <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="data.cardExpiryDate" aria-placeholder="Card Expiry Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">CVV</ion-label>
+    <ion-input type="number" name="cvv" [(ngModel)]="data.cvv" aria-placeholder="CVV"></ion-input>
+  </ion-item>
+  <!--Redirect-->
+  <ion-item>
+    <ion-label position="floating">Merchant Order Id</ion-label>
+    <ion-input [(ngModel)]="data.merchantOrderId" aria-placeholder="Merchant Order Id"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Currency</ion-label>
+    <ion-input [(ngModel)]="data.currency" aria-placeholder="Currency"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Amount</ion-label>
+    <ion-input [(ngModel)]="data.amount" aria-placeholder="Amount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Transaction Date</ion-label>
+    <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="data.transactionDate" aria-placeholder="Transaction Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="payNow()">Pay</ion-button>
+  </ion-item>
 </ion-content>

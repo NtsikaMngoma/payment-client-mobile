@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
+import { CardPaymentRequest } from '../models/card-payment-request';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +21,7 @@ export class ApiService {
   }
 
   // Handle API Errors
-  handleErrors(error: HttpErrorResponse) {
+  handleError(error: HttpErrorResponse) {
     if (error.error) {
       console.error('An error occurred:', error.error.message);
     } else {
@@ -32,7 +34,7 @@ export class ApiService {
   }
 
   // make payment
-  payNow(item): Observable<CardPaymentRequest> {
+  payNow(item: any): Observable<CardPaymentRequest> {
     return this.http
     .post<CardPaymentRequest>(this.BASE_PATH, JSON.stringify(item), this.httpOptions)
     .pipe(
